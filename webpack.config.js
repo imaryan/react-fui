@@ -3,8 +3,8 @@ const path = require('path');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
+        // 'webpack-dev-server/client?http://localhost:8080',
+        // 'webpack/hot/only-dev-server',
         './index.js'
     ],
     output: {
@@ -13,8 +13,10 @@ module.exports = {
         publicPath: '/build/'
     },
     module: {
+        noParse: [],
         loaders: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+            { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=50000&name=[path][name].[ext]' },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -56,6 +58,7 @@ module.exports = {
         // })
     ],
     postcss: [
-        require('autoprefixer-core')
+        require('autoprefixer-core'),
+        require('postcss-font-magician')
     ]
 };

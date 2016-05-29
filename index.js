@@ -2,8 +2,9 @@
  * Created by Aryan on 2016/3/26.
  */
 import React from 'react';
-import { render } from 'react-dom';
-import Loading from './components/Loading';
+import ReactDom from 'react-dom';
+import NavigatorBar from './components/NavigatorBar';
+import Button from './components/Button';
 
 class App extends React.Component {
     componentDidMount() {
@@ -12,7 +13,7 @@ class App extends React.Component {
 
     renderLeftButton() {
         return (
-            <input type="button" value="test" />
+            <Button text="测试" icon="icon-back" style={{ color: 'white' }} handler={ () => {alert(111);} } />
         );
     }
 
@@ -27,12 +28,24 @@ class App extends React.Component {
             tintColor: 'white',
             title: '漫果'
         };
+        const rightButton = {
+            title: '测试',
+            style: { color: 'white', paddingRight: 10 },
+            handler: () => {
+                alert(11);
+            }
+        };
         return (
-            <Loading />
+            <NavigatorBar
+              style={{ backgroundColor: '#25B7AA' }}
+              title={title}
+              leftButton={this.renderLeftButton()}
+              rightButton={rightButton}
+            />
         );
     }
 }
 
 window.onload = () => {
-    render(<App />, document.getElementById('content'));
+    ReactDom.render(<App />, document.getElementById('content'));
 };

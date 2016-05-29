@@ -4,7 +4,7 @@ import styles from './index.css';
 
 const ButtonShape = {
     title: PropTypes.string.isRequired,
-    style: PropTypes.any,
+    style: PropTypes.style,
     handler: PropTypes.func,
 };
 
@@ -32,11 +32,11 @@ export default class HeaderBar extends Component {
     getButtonElement(data = {}) {
         if (!data) return false;
         return (
-            <div className={styles.navBarButtonContainer}>
+            <div className={styles.navBarButtonContainer} >
                 {(!!data.props) ? data : (
-                    <div onClick={data.handler}>
+                    <a className={styles.navTextButton} onClick={data.handler} style={data.style}>
                         {data.title}
-                    </div>
+                    </a>
                 )}
             </div>
         );

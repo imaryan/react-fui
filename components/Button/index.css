@@ -1,0 +1,41 @@
+.btn {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+    padding: 4px 0;
+
+    cursor: pointer;
+    touch-action: manipulation;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #666;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: transparent;
+}
+.btn:focus:active {
+    opacity: 0.3;
+}
+.primary, .info {
+    color: #ffffff;
+    background-color: #2db7f5;
+    border-color: #2db7f5;
+}
+.success {
+    color: #87d068;
+    background-color: #87d068;
+    border-color: #87d068;
+}
+.error, .warning {
+    color: #f50;
+    background-color: #f50;
+    border-color: #f50;
+}

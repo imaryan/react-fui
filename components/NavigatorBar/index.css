@@ -6,8 +6,6 @@
     right: 0;
     left: 0;
     height: 44px;
-    padding-right: 10px;
-    padding-left: 10px;
     border-bottom: 0;
     background-color: #f7f7f7;
     backface-visibility: hidden;
@@ -37,4 +35,10 @@
     align-items: center;
     justify-content: center;
     z-index: -1;
+}
+.navTextButton {
+    color: white;
+}
+.navTextButton:active {
+    opacity: 0.3;
 }
